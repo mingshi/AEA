@@ -3,46 +3,44 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     <title>{{ escape(handler.settings["blog_title"]) }}</title>
-    <link rel="stylesheet" href="{{ static_url("bootstrap/css/bootstrap.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("bootstrap/css/bootstrap.min.css") }}" type="text/css"/>
     <script type="text/javascript" src="{{ static_url("jquery-1.7.1.min.js") }}"></script>
     <script type="text/javascript" src="{{ static_url("bootstrap/js/bootstrap.js") }}"></script>
+    <script type="text/javascript" src="{{ static_url("bootstrap/js/bootstrap-popover.js") }}"></script>
+    <style type="text/css">
+        .table th {
+            background-color: #E5E5E5;
+        }
+    </style>
     {% block head %}{% end %}
   </head>
   <body>
-    <div id="body">
-        <div id="header">
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner" style="text-align:right;">
-                    <div class="container">
-                        <span class="brand">Anjuke Expense Applying</span>
-                        <span style="line-height:50px;margin-right:10px;">欢迎您,施明</span>
-                        <button class="btn btn-info">注销</button>
+        <div id="body">
+            <div id="header">
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner" style="text-align:right;">
+                        <div class="container" style="width:1024px;">
+                             <a class="brand" href="/">Home</a>
+                             <div class="nav-collapse">
+                                 <ul class="nav">
+                                     <li>
+                                     <a href="/myadd">添加报销</a>
+                                     </li>
+                                 </ul>
+                             </div>  
+                            <span style="line-height:50px;margin-right:10px;">欢迎您,施明</span>
+                            <button class="btn btn-info">注销</button>
+                        </div>
                     </div>
-                </div>
-            </div> 
-        </div>
-        <div style="margin-top:85px;width:1024px;margin-left:auto;margin-right:auto;">
-            <div class="tabbable"> <!-- Only required for left/right tabs -->
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tab1" data-toggle="tab">我的报销</a></li>
-                    <li><a href="#tab2" data-toggle="tab">提交报销</a></li>
-                    <li><a href="#tab3" data-toggle="tab">报销流程</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="tab1">
-                        <p>I'm in Section 1.</p>
-                    </div>
-                    <div class="tab-pane" id="tab2">
-                        <p>安全生产，为国为民</p>
-                    </div>
-                    <div class="tab-pane" id="tab3">
-                        <p>实干兴邦，空谈误国</p>
-                    </div>
+                </div> 
+            </div>
+            <div id="content">
+                <div style="margin-top:85px;width:1024px;margin-left:auto;margin-right:auto;">
+                    {% block body %}{% end %}
+                    <p>Anjuke_Expense_Applying 0.1 Powered by Sysdev</p>
                 </div>
             </div>
         </div>
-        <div id="content">{% block body %}{% end %}</div>
-    </div>
-    {% block bottom %}{% end %}
-  </body>
+    {% block footer_script %}{% end %} 
+    </body>
 </html>

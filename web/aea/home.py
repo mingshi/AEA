@@ -9,6 +9,7 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 import unicodedata
+import tornado.autoreload
 
 from tornado.options import define, options
 
@@ -22,6 +23,9 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [ 
             (r"/", HomeHandler),
+            (r"/myadd",MyAddHandler),
+            (r"/detail",MyDetailHandler),
+            (r"/chain",ChainHandler),
         ]
         settings = dict(
             blog_title="Anjuke_Expense_Applying",
@@ -31,7 +35,7 @@ class Application(tornado.web.Application):
             #xsrf_cookies=True,
             cookie_secret="11oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
             login_url="/auth/login",
-        )
+        debug=True)
         tornado.web.Application.__init__(self, handlers, **settings)
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -47,6 +51,18 @@ class HomeHandler(BaseHandler):
             return
         self.render("home.html", entries=entries)
 
+class MyAddHandler(BaseHandler):
+    def get(self):
+        self.render("myadd.html")
+
+class MyDetailHandler(BaseHandler):
+    def get(self):
+        self.render("mydetail.html")
+
+class ChainHandler(BaseHandler):
+    def get(self):
+        self.render("chain.html")
+
 class EntryModule(tornado.web.UIModule):
     def render(self, entry):
         return self.render_string("modules/entry.html", entry=entry)
@@ -55,7 +71,10 @@ def main():
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
     http_server.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    instance = tornado.ioloop.IOLoop.instance()
+    tornado.autoreload.start(instance)
+    instance.start()
+    #tornado.ioloop.IOLoop.instance().start()
 
 
 if __name__ == "__main__":

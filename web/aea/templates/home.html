@@ -1,1 +1,136 @@
 {% extends "base.html" %}
+{% block body %}
+        <div class="row" id="main" style="margin-left:0px;"> <!-- Only required for left/right tabs -->
+            <ul class="breadcrumb" style="background-color: #FBFBFB;background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);background-repeat: repeat-x;border: 1px solid #DDDDDD;border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 0 #FFFFFF inset;">
+                <li>
+                    <a href="/">Home</a>
+                    <span class="driver"> / </span>
+                </li>
+                <li style="color:#999;">我的报销</li>
+                <li style="float:right;">
+                    <div class="btn-group sc-right" data-toggle="buttons-radio">
+                        <a href="#tab1" id="b_active" class="btn btn-mini active" data-toggle="tab">未处理</a>
+                        <a href="#tab2" id="b_success" class="btn btn-mini" data-toggle="tab">已处理</a>
+                        <a href="#tab3" id="b_reject" class="btn btn-mini" data-toggle="tab">已驳回</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="well">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        流程编号
+                                    </th>
+                                    <th>
+                                        申请日期
+                                    </th>
+                                    <th>
+                                        发生金额(元)
+                                    </th>
+                                    <th>
+                                        支付金额(元)
+                                    </th>
+                                    <th>
+                                        状态
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/detail">AJKSH00000000001</a></td>
+                                    <td>2013-03-11</td>
+                                    <td>10700</td>
+                                    <td>9700</td>
+                                    <td>
+                                        <span class="label label-info">习总审批中...</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        流程编号
+                                    </th>
+                                    <th>
+                                        申请日期
+                                    </th>
+                                    <th>
+                                        发生金额(元)
+                                    </th>
+                                    <th>
+                                        支付金额(元)
+                                    </th>
+                                    <th>
+                                        状态
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/detail">AJKSH00000000001</a></td>
+                                    <td>2013-03-11</td>
+                                    <td>10700</td>
+                                    <td>9700</td>
+                                    <td>
+                                        <span class="label label-success">已处理</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        流程编号
+                                    </th>
+                                    <th>
+                                        申请日期
+                                    </th>
+                                    <th>
+                                        发生金额(元)
+                                    </th>
+                                    <th>
+                                        支付金额(元)
+                                    </th>
+                                    <th>
+                                        状态
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/detail">AJKSH00000000002</a></td>
+                                    <td>2013-03-11</td>
+                                    <td>1200000000</td>
+                                    <td>1</td>
+                                    <td>
+                                        <span class="label label-important" id="reject" style="cursor: pointer;">已驳回!</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% end block %}
+{% block footer_script %}
+<script type="text/javascript">
+    $("#reject").popover({
+        animation:true,
+        placement:'top',
+        trigger:'hover',
+        title:'驳回原因',
+        content:'第三项的费用超出了限额',
+    });
+</script>
+{% end block %}

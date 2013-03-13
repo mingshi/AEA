@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row" id="main" style="margin-left:0px;"> <!-- Only required for left/right tabs -->
+    <ul class="breadcrumb" style="background-color: #FBFBFB;background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);background-repeat: repeat-x;border: 1px solid #DDDDDD;border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 0 #FFFFFF inset;">
+        <li>
+            <a href="/">Home</a>
+            <span class="driver"> / </span>
+        </li>
+        <li class="active">报销详情</li>
+    </ul>
+    <div style="text-align:center;">
+        <link rel="stylesheet" href="{{ static_url("chain.css") }}" type="text/css"/>
+        <nav class="breadcrumbs" id="breadcrumbs">
+          <ul>
+            <li><a href="#" class="current">金正恩审批</a></li>
+            <li><a href="#" class="current">胡锦涛审批</a></li>
+            <li><a href="#" class="current">习近平审批</a></li>
+            <li><a href="#">张学友审批</a></li>
+            <li><a href="#">欧弟审批</a></li>
+            <li><em><a href="#">xxx审批</a></em></li>
+            <li><em><a href="#">yyy审批</a></em></li>
+          </ul>
+        </nav>
+        <p>
+    </div>
+    <div class="well">
+        <form class="form-horizontal">
+            <legend>基本信息</legend>
+            <div class="control-group">
+                <div style="float:left;">
+                    <label class="control-label" for="pid">流程编号</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="pid" name="pid" value="AJKSH00000000001" readonly />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="ptime">申请日期</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="ptime" name="ptime" value="2013-03-10" readonly />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="uid">员工编号</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="uid" name="uid" value="SHA001" readonly />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="name">员工姓名</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="name" name="name" value="奥巴马" readonly />
+                        <p> 
+                    </div>
+                        
+                    <label class="control-label" for="job">员工职位</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="job" name="job" value="码畜" readonly />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="city">所属城市</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="city" name="city" value="格鲁吉亚" readonly />
+                        <p>
+                    </div>
+
+                </div>
+                <div style="float:left;">
+                    <label class="control-label" for="division">事业部</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="division" name="division" value="二手房" readonly />
+                        <p> 
+                    </div>
+                        
+                    <label class="control-label" for="department">部门</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="department" name="department" value="销售部" readonly />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="card_id">银行卡号</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="card_id" name="card_id" value="123456789012" />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="incurred">发生金额</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="incurred" name="incurred" value="12345" readonly />
+                        <p>
+                    </div>
+
+                    <label class="control-label" for="real-money">实际金额</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="real-money" name="real-money" value="1234" readonly />
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <legend>报销明细</legend>
+            <table class="table table-bordered table-striped" id="table1">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>事物内容</th>
+                        <th>申请金额</th>
+                        <th>详情说明</th>
+                        <th>预算范围</th>
+                        <th>超预算金额</th>
+                        <th style="width:50px;">动作<a title="Add" id="addtr" name="addtr" style="cursor: pointer;"><i class="icon-plus"></i></a></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody1">
+                    <tr>
+                        <td>01</td>
+                        <td>商务宴请</td>
+                        <td>3000</td>
+                        <td>请kevin吃饭</td>
+                        <td>预算内</td>
+                        <td></td>
+                        <td>
+                            <a title="Delete" href="#"><i class="icon-remove icon-black"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>商务宴请</td>
+                        <td>3000</td>
+                        <td>请kevin吃饭</td>
+                        <td>预算内</td>
+                        <td></td>
+                        <td>
+                            <a title="Delete" href="#"><i class="icon-remove icon-black"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <legend>未清借款列表</legend>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>日期</th>
+                        <th>借款金额</th>
+                        <th>详情说明</th>
+                        <th>报销冲借款</th>
+                        <th>现金/银行还款</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>2013-03-12</td>
+                        <td>3000</td>
+                        <td>团队活动准备金</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>2013-03-12</td>
+                        <td>3000000000000000</td>
+                        <td>收购安居客</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+{% end block %}
+
+{% block footer_script %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        //add tr method
+            $("#addtr").click(function(){
+                $("#tbody1").append(
+                    '<tr><td></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td></td></tr>'
+                );
+            });
+    });
+</script>
+{% end block %}
