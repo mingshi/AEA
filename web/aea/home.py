@@ -26,6 +26,7 @@ class Application(tornado.web.Application):
             (r"/myadd",MyAddHandler),
             (r"/detail",MyDetailHandler),
             (r"/chain",ChainHandler),
+            (r"/reminder",ReminderHandler),
         ]
         settings = dict(
             blog_title="Anjuke_Expense_Applying",
@@ -62,6 +63,10 @@ class MyDetailHandler(BaseHandler):
 class ChainHandler(BaseHandler):
     def get(self):
         self.render("chain.html")
+
+class ReminderHandler(BaseHandler):
+    def get(self):
+        self.render("reminder.html")
 
 class EntryModule(tornado.web.UIModule):
     def render(self, entry):

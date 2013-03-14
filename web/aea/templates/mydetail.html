@@ -25,75 +25,84 @@
     </div>
     <div class="well">
         <form class="form-horizontal">
-            <legend>基本信息</legend>
-            <div class="control-group">
-                <div style="float:left;">
-                    <label class="control-label" for="pid">流程编号</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="pid" name="pid" value="AJKSH00000000001" readonly />
-                        <p>
-                    </div>
+            <div style="float:right;"><span class="label label-info" id="basedivmsg" style="cursor:pointer;">显示基本信息</span></div>
+            <div id="baseinfo" style="display:none;">
+                <legend>基本信息</legend>
+                <div class="control-group">
+                    <div style="float:left;">
+                        <label class="control-label" for="pid">流程编号</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="pid" name="pid" value="AJKSH00000000001" readonly />
+                            <p>
+                        </div>
 
-                    <label class="control-label" for="ptime">申请日期</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="ptime" name="ptime" value="2013-03-10" readonly />
-                        <p>
-                    </div>
+                        <label class="control-label" for="ptime">申请日期</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="ptime" name="ptime" value="2013-03-10" readonly />
+                            <p>
+                        </div>
 
-                    <label class="control-label" for="uid">员工编号</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="uid" name="uid" value="SHA001" readonly />
-                        <p>
-                    </div>
+                        <label class="control-label" for="uid">员工编号</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="uid" name="uid" value="SHA001" readonly />
+                            <p>
+                        </div>
 
-                    <label class="control-label" for="name">员工姓名</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="name" name="name" value="奥巴马" readonly />
-                        <p> 
+                        <label class="control-label" for="name">员工姓名</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="name" name="name" value="奥巴马" readonly />
+                            <p> 
+                        </div>
+                            
+                        <label class="control-label" for="job">员工职位</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="job" name="job" value="码畜" readonly />
+                            <p>
+                        </div>
+
+                        <label class="control-label" for="city">所属城市</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="city" name="city" value="格鲁吉亚" readonly />
+                            <p>
+                        </div>
+
                     </div>
+                    <div style="float:left;">
+                        <label class="control-label" for="division">事业部</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="division" name="division" value="二手房" readonly />
+                            <p> 
+                        </div>
+                            
+                        <label class="control-label" for="department">部门</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="department" name="department" value="销售部" readonly />
+                            <p>
+                        </div>
+
+                        <label class="control-label" for="card_id">银行卡号</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="card_id" name="card_id" value="123456789012" readonly />
+                            <p>
+                        </div>
+
+                        <label class="control-label" for="incurred">发生金额</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="incurred" name="incurred" value="12345" readonly />
+                            <p>
+                        </div>
+
+                        <label class="control-label" for="real-money">实际金额</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="real-money" name="real-money" value="1234" readonly />
+                            <p>
+                        </div>
                         
-                    <label class="control-label" for="job">员工职位</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="job" name="job" value="码畜" readonly />
-                        <p>
-                    </div>
-
-                    <label class="control-label" for="city">所属城市</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="city" name="city" value="格鲁吉亚" readonly />
-                        <p>
-                    </div>
-
-                </div>
-                <div style="float:left;">
-                    <label class="control-label" for="division">事业部</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="division" name="division" value="二手房" readonly />
-                        <p> 
-                    </div>
-                        
-                    <label class="control-label" for="department">部门</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="department" name="department" value="销售部" readonly />
-                        <p>
-                    </div>
-
-                    <label class="control-label" for="card_id">银行卡号</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="card_id" name="card_id" value="123456789012" />
-                        <p>
-                    </div>
-
-                    <label class="control-label" for="incurred">发生金额</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="incurred" name="incurred" value="12345" readonly />
-                        <p>
-                    </div>
-
-                    <label class="control-label" for="real-money">实际金额</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="real-money" name="real-money" value="1234" readonly />
-                        <p>
+                        <label class="control-label" for="real-money">指定卡号</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="real-card" name="real-card" />
+                            <p> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,7 +116,6 @@
                         <th>详情说明</th>
                         <th>预算范围</th>
                         <th>超预算金额</th>
-                        <th style="width:50px;">动作<a title="Add" id="addtr" name="addtr" style="cursor: pointer;"><i class="icon-plus"></i></a></th>
                     </tr>
                 </thead>
                 <tbody id="tbody1">
@@ -118,9 +126,6 @@
                         <td>请kevin吃饭</td>
                         <td>预算内</td>
                         <td></td>
-                        <td>
-                            <a title="Delete" href="#"><i class="icon-remove icon-black"></i></a>
-                        </td>
                     </tr>
                     <tr>
                         <td>02</td>
@@ -129,12 +134,13 @@
                         <td>请kevin吃饭</td>
                         <td>预算内</td>
                         <td></td>
-                        <td>
-                            <a title="Delete" href="#"><i class="icon-remove icon-black"></i></a>
-                        </td>
                     </tr>
                 </tbody>
             </table>
+        </form>
+    </div>
+    <div class="well">
+        <form>
             <legend>未清借款列表</legend>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -179,6 +185,19 @@
                 $("#tbody1").append(
                     '<tr><td></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td><input type="text" style="width:146px;" placeholder="Type Something" /></td><td></td></tr>'
                 );
+            });
+
+
+            //是否显示基本信息层
+            $("#basedivmsg").click(function(){
+                var str=$("#baseinfo").css("display");
+                if (str == "none") {
+                    $("#baseinfo").show();
+                    $("#basedivmsg").html("隐藏基本信息");
+                } else {
+                    $("#baseinfo").hide();
+                    $("#basedivmsg").html("显示基本信息");
+                }  
             });
     });
 </script>

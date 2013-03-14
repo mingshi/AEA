@@ -18,24 +18,27 @@
         <div id="body">
             <div id="header">
                 <div class="navbar navbar-fixed-top">
-                    <div class="navbar-inner" style="text-align:right;">
-                        <div class="container" style="width:1024px;">
-                             <a class="brand" href="/">Home</a>
+                    <div class="navbar-inner" style="text-align:right;background-image: linear-gradient(to bottom, #830C1A, #700E1A);">
+                        <div class="container" style="width:85%">
+                             <a class="brand" href="/" style="color:#fff;text-shadow: none;">Home</a>
                              <div class="nav-collapse">
                                  <ul class="nav">
                                      <li>
-                                     <a href="/myadd">添加报销</a>
+                                     <a href="/myadd" style="color:#fff;text-shadow: none;">添加报销</a>
+                                     </li>
+                                     <li>
+                                     <a href="/reserve" style="color:#fff;text-shadow: none;">预留金申请</a>
                                      </li>
                                  </ul>
                              </div>  
-                            <span style="line-height:50px;margin-right:10px;">欢迎您,施明</span>
+                            <span style="line-height:50px;margin-right:10px;color:#fff;">欢迎您,施明</span>
                             <button class="btn btn-info">注销</button>
                         </div>
                     </div>
                 </div> 
             </div>
             <div id="content">
-                <div style="margin-top:85px;width:1024px;margin-left:auto;margin-right:auto;">
+                <div style="margin-top:85px;width:85%;margin-left:auto;margin-right:auto;">
                     {% block body %}{% end %}
                     <p>Anjuke_Expense_Applying 0.1 Powered by Sysdev</p>
                 </div>
