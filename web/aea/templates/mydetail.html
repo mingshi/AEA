@@ -28,83 +28,30 @@
             <div style="float:right;"><span class="label label-info" id="basedivmsg" style="cursor:pointer;">显示基本信息</span></div>
             <div id="baseinfo" style="display:none;">
                 <legend>基本信息</legend>
-                <div class="control-group">
-                    <div style="float:left;">
-                        <label class="control-label" for="pid">流程编号</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="pid" name="pid" value="AJKSH00000000001" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="ptime">申请日期</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="ptime" name="ptime" value="2013-03-10" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="uid">员工编号</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="uid" name="uid" value="SHA001" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="name">员工姓名</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="name" name="name" value="奥巴马" readonly />
-                            <p> 
-                        </div>
-                            
-                        <label class="control-label" for="job">员工职位</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="job" name="job" value="码畜" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="city">所属城市</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="city" name="city" value="格鲁吉亚" readonly />
-                            <p>
-                        </div>
-
+                <div style="line-height:35px;">
+                    <div class="row"> 
+                        <div class="span4">流程编号：AJKSH00000000001</div>
+                        <div class="span4">申请日期：2013-03-10</div>
+                        <div class="span4">发生金额：12345</div>
                     </div>
-                    <div style="float:left;">
-                        <label class="control-label" for="division">事业部</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="division" name="division" value="二手房" readonly />
-                            <p> 
-                        </div>
-                            
-                        <label class="control-label" for="department">部门</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="department" name="department" value="销售部" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="card_id">银行卡号</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="card_id" name="card_id" value="123456789012" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="incurred">发生金额</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="incurred" name="incurred" value="12345" readonly />
-                            <p>
-                        </div>
-
-                        <label class="control-label" for="real-money">实际金额</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="real-money" name="real-money" value="1234" readonly />
-                            <p>
-                        </div>
-                        
-                        <label class="control-label" for="real-money">指定卡号</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="real-card" name="real-card" />
-                            <p> 
-                        </div>
+                    <div class="row"> 
+                        <div class="span4">员工编号：SHA001</div>
+                        <div class="span4">员工姓名：奥巴马</div>
+                        <div class="span4">员工职位：码畜</div>
                     </div>
-                </div>
+
+
+                    <div class="row"> 
+                        <div class="span4">所属城市：格鲁吉亚</div>
+                        <div class="span4">事业部：二手房</div>
+                        <div class="span4">部门：销售部</div>
+                    </div>
+                    <div class="row"> 
+                        <div class="span4">银行卡号：1234567890</div>
+                        <div class="span4">实际金额：12345</div>
+                        <div class="span4">指定卡号： <input type="text" class="input-xlarge" id="real-card" name="real-card" /> </div>
+                    </div>
+                </div> 
             </div>
             <legend>报销明细</legend>
             <table class="table table-bordered table-striped" id="table1">
