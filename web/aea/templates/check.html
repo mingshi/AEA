@@ -202,12 +202,44 @@
     </div>
     <!--悬浮审批按钮-->
     <div style="right:0;margin:0px;padding:0px;position:fixed;top:30%;">
-        <button class="btn btn-small btn-success" type="button" style="width:30px;">一键通关</button>
+        <button class="btn btn-small btn-success" type="button" style="width:30px;" data-toggle="modal" href="#pass" data-keyboard="false" data-backdrop="false">一键通关</button>
         <p>
         <p>
-        <button class="btn btn-small btn-warning" type="button" style="width:30px;">一键驳回</button>
+        <button class="btn btn-small btn-warning" type="button" style="width:30px;" data-toggle="modal" href="#reject" data-keyboard="false" data-backdrop="false">一键驳回</button>
     </div>
 </div>
+
+<!--弹出层 pass-->
+<div class="modal hide fade" id="pass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal" aria-hidden="true">x</a>
+        <h3>通过</h3>
+    </div>
+    <div class="modal-body">
+        <textarea id="myurge" name="myurge" style="width:90%;" placeholder="填写一些东西??"></textarea>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>
+        <a href="#" class="btn btn-primary">通过</a>
+    </div>
+</div>
+<!--end-->
+
+<!--弹出层 reject-->
+<div class="modal hide fade" id="reject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal" aria-hidden="true">x</a>
+        <h3>驳回</h3>
+    </div>
+    <div class="modal-body">
+        <textarea id="myurge" name="myurge" style="width:90%;" placeholder="填写理由..."></textarea>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>
+        <a href="#" class="btn btn-primary">驳回</a>
+    </div>
+</div>
+<!--end-->
 {% end block %}
 
 {% block footer_script %}
