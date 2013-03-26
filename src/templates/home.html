@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% block body %}
+        <div class="row" id="main" style="margin-left:0px;"> <!-- Only required for left/right tabs -->
+            <div>
+                <ul class="breadcrumb" style="background-color: #FBFBFB;background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);background-repeat: repeat-x;border: 1px solid #DDDDDD;border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 0 #FFFFFF inset;">
+                    <li>
+                        <a href="/">Home</a>
+                        <span class="driver"> / </span>
+                    </li>
+                    <li style="color:#999;">我的报销</li>
+                    <li style="color:#999;">{{ user.name }}</li>
+                </ul>
+                <div class="btn-group sc-right" data-toggle="buttons-radio"  style="float:right;" id="bxtabs">
+                    <span class="badge badge-important" style="margin-right:-7px;position: relative;z-index:99;">1</span><a href="#tab1" id="b_active" class="btn btn-mini active" data-toggle="tab">未处理</a>
+                    <a href="#tab2" id="b_success" class="btn btn-mini" data-toggle="tab">已处理</a>
+                    <a href="#tab3" id="b_reject" class="btn btn-mini" data-toggle="tab">已驳回</a>
+                </div>
+                <div class="btn-group sc-right" data-toggle="buttons-radio"  style="float:right;display:none;" id="cltabs">
+                    <span class="badge badge-important" style="margin-right:-7px;position: relative;z-index:99;">1</span><a href="#tabcl1" id="b_active" class="btn btn-mini active" data-toggle="tab">未处理</a>
+                    <a href="#tabcl2" id="b_success" class="btn btn-mini" data-toggle="tab">已处理</a>
+                </div>
+            </div>
+
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active" id="mybxtab"><a href="#bx" data-toggle="tab">我的报销</a></li>
+                    <li id="mycltab"><a href="#sp" data-toggle="tab">我的审批</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="bx">
+                        <div class="well">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    流程编号
+                                                </th>
+                                                <th>
+                                                    申请日期
+                                                </th>
+                                                <th>
+                                                    发生金额(元)
+                                                </th>
+                                                <th>
+                                                    支付金额(元)
+                                                </th>
+                                                <th style="width:140px;">
+                                                    状态
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="/detail">AJKSH00000000001</a></td>
+                                                <td>2013-03-11</td>
+                                                <td>10700</td>
+                                                <td>9700</td>
+                                                <td>
+                                                    <span class="label label-info">习总审批中...</span>&nbsp;&nbsp;<a class="label" style="cursor:pointer;" data-toggle="modal" href="#myModal" data-keyboard="false" data-backdrop="false">催办</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane" id="tab2">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    流程编号
+                                                </th>
+                                                <th>
+                                                    申请日期
+                                                </th>
+                                                <th>
+                                                    发生金额(元)
+                                                </th>
+                                                <th>
+                                                    支付金额(元)
+                                                </th>
+                                                <th>
+                                                    状态
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="/detail">AJKSH00000000001</a></td>
+                                                <td>2013-03-11</td>
+                                                <td>10700</td>
+                                                <td>9700</td>
+                                                <td>
+                                                    <span class="label label-success">已处理</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane" id="tab3">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    流程编号
+                                                </th>
+                                                <th>
+                                                    申请日期
+                                                </th>
+                                                <th>
+                                                    发生金额(元)
+                                                </th>
+                                                <th>
+                                                    支付金额(元)
+                                                </th>
+                                                <th>
+                                                    状态
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="/detail">AJKSH00000000002</a></td>
+                                                <td>2013-03-11</td>
+                                                <td>1200000000</td>
+                                                <td>1</td>
+                                                <td>
+                                                    <span class="label label-important" id="reject" style="cursor: pointer;">已驳回!</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第二个切换tab-->
+                    <div class="tab-pane" id="sp">
+                        <div class="well">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabcl1">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    流程编号
+                                                </th>
+                                                <th>
+                                                    申请日期
+                                                </th>
+                                                <th>
+                                                    发生金额(元)
+                                                </th>
+                                                <th>
+                                                    支付金额(元)
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="/check">defhahahah</a></td>
+                                                <td>2013-03-11</td>
+                                                <td>10700</td>
+                                                <td>9700</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane" id="tabcl2">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    流程编号
+                                                </th>
+                                                <th>
+                                                    申请日期
+                                                </th>
+                                                <th>
+                                                    发生金额(元)
+                                                </th>
+                                                <th>
+                                                    支付金额(元)
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="/detail">abc</a></td>
+                                                <td>2013-03-11</td>
+                                                <td>10700</td>
+                                                <td>9700</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--弹出层-->
+<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal" aria-hidden="true">x</a>
+        <h3>催办</h3>
+    </div>
+    <div class="modal-body">
+        <textarea id="myurge" name="myurge" style="width:90%;" placeholder="填写理由..."></textarea>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>
+        <a href="#" class="btn btn-primary">一键催</a>
+    </div>
+</div>
+<!--end-->
+{% end block %}
+{% block footer_script %}
+<script type="text/javascript">
+    $("#reject").popover({
+        animation:true,
+        placement:'top',
+        trigger:'hover',
+        title:'驳回原因',
+        content:'第三项的费用超出了限额',
+    });
+
+    $("#mybxtab").click(function(){
+        $("#bxtabs").show();
+        $("#cltabs").hide();
+    });
+    $("#mycltab").click(function(){
+        $("#bxtabs").hide();
+        $("#cltabs").show();
+    });
+</script>
+{% end block %}
