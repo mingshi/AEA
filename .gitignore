@@ -5,3 +5,7 @@
 .DS_Store
 
 src/AEA.egg-info
+
+.project
+.pydevproject
+.settings/

@@ -19,10 +19,6 @@
   position: relative;
 }
 
-#breadcrumbs a:hover{
-  background: #99db76;
-}
-
 #breadcrumbs a::before{
   content: "";
   position: absolute;
@@ -32,10 +28,6 @@
   border-style: solid;
   border-color: #ddd #ddd #ddd transparent;
   left: -1em;
-}
-
-#breadcrumbs a:hover::before{
-  border-color: #99db76 #99db76 #99db76 transparent;
 }
 
 #breadcrumbs a::after{
@@ -49,28 +41,25 @@
   right: -1em;
 }
 
-#breadcrumbs a:hover::after{
-  border-left-color: #99db76;
+
+#breadcrumbs .approve_status_2, #breadcrumbs .approve_status_2:hover{
+    background: none repeat scroll 0 0 #FF0000;
+    font-weight: bold;
+}
+#breadcrumbs .approve_status_2:after {
+    border-left-color: #FF0000;
+}
+#breadcrumbs .approve_status_2:before {
+    border-color: #FF0000 #FF0000 #FF0000 transparent;
+}
+#breadcrumbs .approve_status_1, #breadcrumbs .approve_status_1:hover{
+    background: none repeat scroll 0 0 #99DB76;
+    font-weight: bold;
+}
+#breadcrumbs .approve_status_1:after {
+    border-left-color: #99DB76;
+}
+#breadcrumbs .approve_status_1:before {
+    border-color: #99DB76 #99DB76 #99DB76 transparent;
 }
 
-#breadcrumbs .current,
-#breadcrumbs .current:hover{
-  font-weight: bold;
-  background: #99db76;
-}
-
-#breadcrumbs .current::after{
-    border-left-color: #99db76;
-}
-
-#breadcrumbs .current::before{
-   border-color: #99db76 #99db76 #99db76 transparent; 
-}
-
-/*
-
-#breadcrumbs .current::after,
-#breadcrumbs .current::before{
-  content: normal;
-}
-*/

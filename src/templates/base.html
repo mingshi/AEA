@@ -12,6 +12,8 @@
             background-color: #E5E5E5;
         }
     </style>
+    <link rel="stylesheet" href="{{ static_url("base.css") }}" type="text/css"/>
+    <script type="text/javascript" src="{{ static_url("base.js") }}"></script>
     {% block head %}{% end %}
   </head>
   <body>
@@ -34,7 +36,7 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="/profile" style="text-shadow: none;color:#fff;">您好,施明!</a>
+                                        <a href="/profile" style="text-shadow: none;color:#fff;">您好,{{ handler.current_userinfo['name']}}!</a>
                                     </li>
                                     <li>
                                         <a href="/logout" style="text-shadow: none;color:#fff;">注销</a>
@@ -47,7 +49,7 @@
                 </div> 
             </div>
             <div id="content">
-                <div style="margin-top:85px;width:1280px;margin-left:auto;margin-right:auto;">
+                <div style="margin-top:45px;width:1280px;margin-left:auto;margin-right:auto;">
                     {% block body %}{% end %}
                     <p>Anjuke_Expense_Applying 0.1 Powered by Sysdev</p>
                 </div>
